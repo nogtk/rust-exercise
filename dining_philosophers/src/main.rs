@@ -1,8 +1,13 @@
 use std::thread;
 use std::time::Duration;
+use std::sync::Mutex;
 
 struct Philosopher {
     name: String,
+}
+
+struct Table {
+    forks: Vec<Mutex<()>>,
 }
 
 impl Philosopher {
